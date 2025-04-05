@@ -1,10 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Copyright>Copyright © 2025 Throckmorpheus</Copyright>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DefineConstants>UIMGUI_REMOVE_IMPLOT;UIMGUI_REMOVE_IMNODES;UIMGUI_REMOVE_IMGUIZMO</DefineConstants>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
@@ -12,9 +11,10 @@
     <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ImGui.NET" Version="1.90.0" />
     <PackageReference Include="OWML" Version="2.13.0" />
     <PackageReference Include="OuterWildsGameLibs" Version="1.1.15.1018" />
+    <PackageReference Include="ImGui.NET" Version="1.90.0" />
+    <ProjectReference Include="..\uimgui\UImGui.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="default-config.json">

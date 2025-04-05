@@ -11,8 +11,6 @@ public class Main : ModBehaviour
 {
 	public static Main Instance;
 
-	private CommandBuffer _renderBuffer;
-
 	public void Awake()
 	{
 		Instance = this;
