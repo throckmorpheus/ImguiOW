@@ -1,26 +1,41 @@
-﻿using HarmonyLib;
-using OWML.Common;
+﻿using OWML.Common;
 using OWML.ModHelper;
-using System.Reflection;
 using ImGuiNET;
-using UnityEngine.Rendering;
+using UImGui;
+using UnityEngine;
 
-namespace OWImGui;
+namespace ImGuiOW;
 
-public class Main : ModBehaviour
+public class ImGuiOW : ModBehaviour
 {
-	public static Main Instance;
+	public static ImGuiOW Instance;
+	public static IModConsole Console => Instance?.ModHelper?.Console;
 
-	public void Awake()
-	{
-		Instance = this;
+	private UImGui.UImGui _uImGui;
+	private TestBehaviour _testBehavour;
+
+	public void Awake() => Instance = this;
+
+	public void Start() {
+		Console.LoadedMessage(this);
+
+		_testBehavour = gameObject.AddComponent<TestBehaviour>();
+		Console.LoadedMessage(_testBehavour);
+
+		_uImGui = gameObject.AddComponent<UImGui.UImGui>();
+		Console.LoadedMessage(_uImGui);
+		
+		if (FindObjectOfType<Camera>() is Camera camera) {
+			Console.WriteLine($"Set imgui camera to {camera}.", MessageType.Success);
+			_uImGui?.SetCamera(camera);
+		} else Console.WriteLine($"Could not find camera for imgui.", MessageType.Error);
+		
+		UImGuiUtility.Layout += OnLayout;
 	}
 
-	public void Start()
-	{
-		ModHelper.Console.WriteLine($"Imgui loaded.", MessageType.Success);
-
-		//new Harmony("Throckmorpheus.Imgui").PatchAll(Assembly.GetExecutingAssembly());
+	private void OnLayout(UImGui.UImGui uImGui) {
+		//ModHelper.Console.WriteLine($"OnLayout called.", MessageType.Debug);
+		ImGui.ShowDemoWindow();
 	}
 }
 

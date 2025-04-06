@@ -7,14 +7,14 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-    <NoWarn>MSB3270</NoWarn>
+    <DefineConstants>UIMGUI_REMOVE_IMPLOT;UIMGUI_REMOVE_IMNODES;UIMGUI_REMOVE_IMGUIZMO</DefineConstants>
+    <NoWarn>MSB3270;CS0649</NoWarn>
     <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="OWML" Version="2.13.0" />
     <PackageReference Include="OuterWildsGameLibs" Version="1.1.15.1018" />
     <PackageReference Include="ImGui.NET" Version="1.90.0" />
-    <ProjectReference Include="..\uimgui\UImGui.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="default-config.json">
@@ -26,5 +26,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ImGui.csproj.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="uimgui\uimgui\*" />
+    <Compile Remove="uimgui\uimgui\Editor\**\*.cs" />
+    <Compile Remove="uimgui\uimgui\Plugins\**\*.cs" />
+    <Compile Remove="uimgui\uimgui\Resource\**\*.cs" />
+    <Compile Remove="uimgui\uimgui\Sample\**\*.cs" />
+    <Compile Remove="uimgui\uimgui\Source\Utils\Utils.cs" />
+    <Compile Remove="uimgui\uimgui\Source\Data\Font\FontConfig.cs" />
+    <Compile Remove="uimgui\uimgui\Source\Assets\StyleAsset.cs" />
+    <Compile Remove="uimgui\uimgui\Source\Data\UIOConfig.cs" />
+    <Compile Remove="uimgui\uimgui\Source\Platform\PlatformBase.cs" />
+    <Compile Remove="uimgui\uimgui\Source\Renderer\RendererProcedural.cs" />
   </ItemGroup>
 </Project>
