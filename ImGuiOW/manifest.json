@@ -1,9 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
-  "filename": "ImGui.dll",
+  "filename": "ImGuiOW.dll",
   "author": "Throckmorpheus",
-  "name": "ImGui",
-  "uniqueName": "Throckmorpheus.ImGui",
+  "name": "ImGuiOW",
+  "uniqueName": "Throckmorpheus.ImGuiOW",
   "version": "0.1.0",
   "owmlVersion": "2.13.0",
   "dependencies": []

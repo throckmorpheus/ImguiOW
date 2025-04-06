@@ -11,13 +11,13 @@ public class ImGuiOW : ModBehaviour
 	public static ImGuiOW Instance;
 	public static IModConsole Console => Instance?.ModHelper?.Console;
 
-	private UImGui.UImGui _uImGui;
-	private TestBehaviour _testBehavour;
+	//private UImGui.UImGui _uImGui;
+	//private TestBehaviour _testBehavour;
 
 	public void Awake() => Instance = this;
 
 	public void Start() {
-		Console.LoadedMessage(this);
+		/*Console.LoadedMessage(this);
 
 		_testBehavour = gameObject.AddComponent<TestBehaviour>();
 		Console.LoadedMessage(_testBehavour);
@@ -30,12 +30,12 @@ public class ImGuiOW : ModBehaviour
 			_uImGui?.SetCamera(camera);
 		} else Console.WriteLine($"Could not find camera for imgui.", MessageType.Error);
 		
-		UImGuiUtility.Layout += OnLayout;
+		UImGuiUtility.Layout += OnLayout;*/
 	}
 
-	private void OnLayout(UImGui.UImGui uImGui) {
+	/*private void OnLayout(UImGui.UImGui uImGui) {
 		//ModHelper.Console.WriteLine($"OnLayout called.", MessageType.Debug);
 		ImGui.ShowDemoWindow();
-	}
+	}*/
 }
 

@@ -3,7 +3,7 @@ using OWML.Common;
 
 namespace ImGuiOW;
 
-public static class ModConsoleExtensions
+/*public static class ModConsoleExtensions
 {
     public static void LoadedMessage<T>(this IModConsole console, T obj) =>
         console?.WriteLine(
@@ -16,4 +16,4 @@ public static class ModConsoleExtensions
 
     public static void Message<T>(this IModConsole console, T _from, string message, MessageType messageType = MessageType.Message) =>
         console.Message<T>(message, messageType);
-}
+}*/
