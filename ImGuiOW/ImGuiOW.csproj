@@ -6,21 +6,32 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-    <DefineConstants>UIMGUI_REMOVE_IMPLOT;UIMGUI_REMOVE_IMNODES;UIMGUI_REMOVE_IMGUIZMO</DefineConstants>
+    <DefineConstants>HAS_INPUTSYSTEM;UIMGUI_REMOVE_IMPLOT;UIMGUI_REMOVE_IMNODES;UIMGUI_REMOVE_IMGUIZMO</DefineConstants>
     <NoWarn>MSB3270;CS0649</NoWarn>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="OWML" Version="2.13.0" />
-    <PackageReference Include="OuterWildsGameLibs" Version="1.1.15.1018" />
-    <PackageReference Include="ImGui.NET" Version="1.90.0" />
+    <PackageReference Include="OWML" Version="2.13.0">
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="OuterWildsGameLibs" Version="1.1.15.1018">
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ImGui.NET" Version="1.90.0.1" />
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
   </ItemGroup>
   <ItemGroup>
     <None Include="default-config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="manifest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets/**/*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -33,11 +44,14 @@
     <Compile Remove="uimgui\uimgui\Plugins\**\*.cs" />
     <Compile Remove="uimgui\uimgui\Resource\**\*.cs" />
     <Compile Remove="uimgui\uimgui\Sample\**\*.cs" />
+    <Compile Remove="uimgui\uimgui\Source\UImGui.cs" />
     <Compile Remove="uimgui\uimgui\Source\Utils\Utils.cs" />
+    <Compile Remove="uimgui\uimgui\Source\Utils\RenderUtility.cs" />
     <Compile Remove="uimgui\uimgui\Source\Data\Font\FontConfig.cs" />
     <Compile Remove="uimgui\uimgui\Source\Assets\StyleAsset.cs" />
     <Compile Remove="uimgui\uimgui\Source\Data\UIOConfig.cs" />
     <Compile Remove="uimgui\uimgui\Source\Platform\PlatformBase.cs" />
+    <Compile Remove="uimgui\uimgui\Source\Platform\InputSystemPlatform.cs" />
     <Compile Remove="uimgui\uimgui\Source\Renderer\RendererProcedural.cs" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 ﻿<Project>
   <PropertyGroup>
-    <OutputPath>$(AppData)/OuterWildsModManager/OWML/Mods/Throckmorpheus.ImGui</OutputPath>
+    <OutputPath>$(AppData)/OuterWildsModManager/OWML/Mods/Throckmorpheus.ImGuiOW</OutputPath>
   </PropertyGroup>
 </Project>
