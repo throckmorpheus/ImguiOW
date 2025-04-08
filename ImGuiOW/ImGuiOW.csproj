@@ -2,7 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <Copyright>Copyright © 2025 Throckmorpheus</Copyright>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -21,6 +20,7 @@
     <PackageReference Include="ImGui.NET" Version="1.90.0.1" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+    <ProjectReference Include="../api/ImGuiOWAPI.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="default-config.json">

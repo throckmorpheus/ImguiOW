@@ -18,6 +18,8 @@ public class ImGuiOW : ModBehaviour
 	
 	public override object GetApi() => new ImGuiAPI();
 	
+	public event Action Layout;
+	
 	private UImGui.UImGui _uImGui = null;
 
 	private Camera _activeCamera = null;
@@ -30,8 +32,6 @@ public class ImGuiOW : ModBehaviour
 			Console.Message($"Switch ImGui camera to {ActiveCamera switch { null => "null", _ => ActiveCamera }}");
 		}
 	}
-
-	public event Action Layout;
 
 	public void Awake() => Instance = this;
 
@@ -52,8 +52,6 @@ public class ImGuiOW : ModBehaviour
 		GlobalMessenger.AddListener("WakeUp", OnPlayerWakeUp);
 
 		_uImGui.Layout += OnUImGuiLayout;
-
-		Layout += ImGui.ShowDemoWindow;
 	}
 
 	public void OnDestroy() {
