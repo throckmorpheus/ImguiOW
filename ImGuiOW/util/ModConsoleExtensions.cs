@@ -25,4 +25,8 @@ public static class ModConsoleExtensions
     public static void Debug(this IModConsole console, string message) => console.Message(message, MessageType.Debug);
     public static void Debug<T>(this IModConsole console, string message) => console.Message<T>(message, MessageType.Debug);
     public static void Debug<T>(this IModConsole console, T _from, string message) => console.Debug<T>(message);
+    
+    public static void Info(this IModConsole console, string message) => console.Message(message, MessageType.Info);
+    public static void Info<T>(this IModConsole console, string message) => console.Message<T>(message, MessageType.Info);
+    public static void Info<T>(this IModConsole console, T _from, string message) => console.Info<T>(message);
 }
