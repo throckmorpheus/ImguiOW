@@ -65,6 +65,9 @@ jobs:
       - name: Remove .csproj.user
         run: if (Test-Path ${{ env.PROJ_NAME }}/${{ env.PROJ_NAME }}.csproj.user) { rm ${{ env.PROJ_NAME }}/${{ env.PROJ_NAME }}.csproj.user }
 
+      - name: Git Submodule Init
+        run: git submodule update --init --recursive
+
       - name: Build Mod
         run: dotnet build ${{ env.PROJ_NAME }}/${{ env.PROJ_NAME }}.csproj -c Release
 
