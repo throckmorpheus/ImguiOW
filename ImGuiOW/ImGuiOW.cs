@@ -61,7 +61,7 @@ public class ImGuiOW : ModBehaviour
 
 	private void OnUImGuiLayout(UImGui.UImGui uImGui) => Layout?.Invoke();
 
-	public void SetCamera(OWCamera camera) => ActiveCamera = camera.useFarCamera ? camera.farCamera : camera.mainCamera;
+	public void SetCamera(OWCamera camera) => ActiveCamera = camera?.mainCamera ?? camera?.farCamera;
 	public void SetCamera(Camera camera) => ActiveCamera = camera;
 
 	private void OnSwitchActiveCamera(OWCamera camera) => SetCamera(camera);
