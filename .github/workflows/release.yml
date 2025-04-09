@@ -15,7 +15,7 @@ permissions:
 
 env:
   PROJ_USERNAME: Throckmorpheus
-  PROJ_NAME: Imgui
+  PROJ_NAME: ImGuiOW
 
 jobs:
   pre_job:
